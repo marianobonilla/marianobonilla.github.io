@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Mariano</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="Mariano">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/png" href="favicon/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script src="clipboard.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123662874-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-123662874-1');
+    </script>
+
+
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <div class="left-container">
+            <div class="left-container-items">
+                <h1>Hi, I'm <span class="accent">Mariano</span>.</h1>
+                <h2>Physics/Computer Science student at USC.</h2>
+                    <ul>
+                        <li><a class="highlight" href="https://github.com/marianobonilla" target="_blank" rel="noopener noreferrer">Github</a></li>
+                        <li><a class="highlight" href="https://www.linkedin.com/in/mariano-bonilla-869744b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <!--
+                        <li><a class="highlight" href="https://twitter.com/gonenadam" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        -->
+                        <button class="highlight" id="email" data-clipboard-action="copy" data-clipboard-text="marianob@usc.edu">
+                            <li>Email</li>
+                        </button>
+                    </ul>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="right-container-items">
+                <div class="about-items">
+                    <h3>about</h3>
+                    <p>Avid learner. Previously, I worked at
+                        <a class="highlight" href="https://www.ibm.com/us-en/?ar=1" target="_blank" rel="noopener noreferrer">IBM </a>
+                        as a software developer intern and at  
+                        <a class="highlight" href="https://www.keckmedicine.org" target="_blank" rel="noopener noreferrer">Keck Medicine of USC</a>.
+                        
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        var clipboard = new ClipboardJS('#email');
+        const email_btn = document.getElementById("email");
+        const tippy_ = tippy(email_btn, {
+            content: 'Copied!',
+            trigger: 'click',
+            arrowType: 'round',
+            animation: 'scale',
+            placement: 'bottom'
+        });
+
+        clipboard.on('success', function (e) {
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function (e) {
+            tippy_.setContent('Press Ctrl+C to copy');
+        });
+
+    </script>
+</body>
+
+</html>
